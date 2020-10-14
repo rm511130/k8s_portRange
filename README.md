@@ -62,20 +62,10 @@ kubectl describe networkpolicies.networking.k8s.io
 
 If you edit the `networkpolicy_input.yaml` example and change the `portRange` numbers to:
 
-- ingress: `portRange: 7000:13022`
-- egress:  `portRange: 4000:6316`
-
-The commands shown below should still work:
-
-```
-awk -f portRange-2-ports.awk networkpolicy_input.yaml > networkpolicy.yaml
-kubectl apply -f networkpolicy.yaml 
-```
-
-However, if you extend the `portRange` in the `networkpolicy_input.yaml` example, you'll see an self-explanatory error/limitation:
-
 - ingress: `portRange: 7000:13023`
 - egress:  `portRange: 4000:6316`
+
+The commands shown below will produce an error:
 
 ```
 awk -f portRange-2-ports.awk networkpolicy_input.yaml > networkpolicy.yaml
@@ -88,7 +78,17 @@ The error message should look like this:
 The NetworkPolicy "test-network-policy" is invalid: metadata.annotations: Too long: must have at most 262144 characters
 ```
 
-Conclusion: there _is_ a limit to how many ports can be included in a network policy file. Consequently, there is a limit to how many ports you can include when using the `portRange` notation.
+If you edit the `networkpolicy_input.yaml` example and change the `portRange` numbers to:
+
+- ingress: `portRange: 7000:13022`
+- egress:  `portRange: 4000:6316`
+
+The network policy will work.
+
+Conclusions: 
+- There _is_ a limit to how many ports can be included in a network policy file. 
+- Consequently, there is a limit to how many ports you can include when using the `portRange` notation.
+- Port numbers with more digits consume the available characters at a faster pace than port numbers with fewer digits.
 
 
 # Network Performance
