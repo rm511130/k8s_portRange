@@ -4,7 +4,7 @@ A simple `awk` program that convert the `portRange` notation to the standard k8s
 # What is the problem we're trying to solve?
 - K8s network policies can get quite lengthy and difficult to create when one is striving to include a large sequence of ingress and/or egress ports. 
 - The syntax `portRange: <from-port-#>:<to-port-#>` allows for a more concise yaml file, and will hopefully be adopted in the near future.
-- For the time being, you can use the `portRange` notation in your `almost-ready-networkpolicy.yaml` file and then process it using `portRange-2-ports.awk`.
+- You can use the `portRange` notation in your `almost-ready-networkpolicy.yaml` file and then process it using `portRange-2-ports.awk`.
 - The output will be a properly formatted `ready-to-be-used-networkpolicy.yaml` file where the `portRange` notation has been converted into a sequence of inidividual `port` entries.
 
 ```
