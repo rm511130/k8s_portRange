@@ -1,5 +1,5 @@
 # portRange
-A simple awk program that convert the `portRange` notation to standard k8s `port` syntax used in kubernetes networkpolicies.yml files.
+A simple `awk` program that convert the `portRange` notation to standard k8s `port` syntax used in kubernetes `networkpolicies.yml` files.
 
 # What is the problem we're trying to solve?
 K8s network policies can get quite lengthy and difficult to create when one is striving to include a large sequence of ingress and/or egress ports. 
