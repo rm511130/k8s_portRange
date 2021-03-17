@@ -97,8 +97,8 @@ No negative performance issues have been observed when using very long network p
 
 # When will K8s address the port ranges requirement?
 
-- As of 03/18/2021, the next release of Open Source Kubernetes v1.21 will include an alpha-release solution for port ranges.
-- See cell D-42 on the “Dashboard” tab of this Google Sheets document.
+- As of 03/18/2021, the next release of Open Source [Kubernetes v1.21](applewebdata://617F29BB-864B-435C-B2FB-C8A054A9368D/§%09https:/www.kubernetes.dev/resources/release) will include an alpha-release solution for port ranges.
+- See cell D-42 on the “Dashboard” tab of this [Google Sheets document](https://docs.google.com/spreadsheets/d/1I_ybuEI6gNNPJT7xcO_y-eu_BpayTdBX3nerVsHybNA/edit#gid=936265414).
 - Issue description: https://github.com/kubernetes/enhancements/issues/2079
 - Design details: https://github.com/kubernetes/enhancements/tree/master/keps/sig-network/2079-network-policy-port-range  
 
